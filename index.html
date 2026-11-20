@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi bienestar · Ana</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Iconos SVG nativos (sin librerías) -->
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 17V5l11-2v12"/><circle cx="6" cy="17.5" r="3"/><circle cx="17" cy="15.5" r="3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.7-7.5-10A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.9c0 5.3-7.5 10-7.5 10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.3"/><circle cx="3.5" cy="12" r="1.3"/><circle cx="3.5" cy="18" r="1.3"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 12h4l3-8 4 16 3-8h6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M13 2c1 4-2 5-2 8 0 2 1.5 3 3 3 2 0 3-1.5 3-3 2 2 3 4 3 6a8 8 0 0 1-16 0c0-4 3-7 5-9 0 2 1 3 2 3 1 0 2-1 2-3 0-2-1-3 0-5z"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 6.5-2.5 7.5-2.5 7.5h17S18 15.5 18 9z"/><path d="M10 20h4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c0-4 3.4-7 7.5-7s7.5 3 7.5 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m20 20-4.3-4.3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5 19 12 8 18.5z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.5" fill="currentColor" stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1.5" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M19.1 4.9l-1.5 1.5M6.4 17.6l-1.5 1.5"/></symbol>
+  </svg>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="profile-mini">
+        <div class="avatar-ring">
+          <img src="assets/avatar-ana.png" alt="Avatar de Ana">
+        </div>
+        <p class="greeting">Hi, Ana! <span class="wave">👋</span></p>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav-item active" type="button" data-section="Mi bienestar"><svg class="icon"><use href="#i-home"/></svg><span>Mi bienestar</span></button>
+        <button class="nav-item" type="button" data-section="Mis sesiones"><svg class="icon"><use href="#i-note"/></svg><span>Mis sesiones</span></button>
+        <button class="nav-item" type="button" data-section="Favoritos"><svg class="icon"><use href="#i-heart"/></svg><span>Favoritos</span></button>
+        <button class="nav-item" type="button" data-section="Listas"><svg class="icon"><use href="#i-list"/></svg><span>Listas</span></button>
+        <button class="nav-item" type="button" data-section="Podcasts"><svg class="icon"><use href="#i-mic"/></svg><span>Podcasts</span></button>
+        <button class="nav-item" type="button" data-section="Actividad"><svg class="icon"><use href="#i-pulse"/></svg><span>Actividad</span></button>
+        <button class="nav-item" type="button" data-section="Ajustes"><svg class="icon"><use href="#i-gear"/></svg><span>Ajustes</span></button>
+      </nav>
+
+      <div class="premium">
+        <img class="crown" src="assets/crown.png" alt="">
+        <h2>Go Premium</h2>
+        <p>Desbloquea sesiones sin anuncios y más</p>
+        <button class="upgrade" type="button">Mejorar</button>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+
+      <header class="topbar">
+        <h1 id="pageTitle">Mi bienestar</h1>
+
+        <label class="search">
+          <svg class="icon"><use href="#i-search"/></svg>
+          <input id="search" type="search" placeholder="Buscar sesiones, artistas..." autocomplete="off" aria-label="Buscar sesiones o artistas">
+        </label>
+
+        <div class="top-actions">
+          <button class="icon-btn" id="bell" type="button" aria-label="Notificaciones">
+            <svg class="icon"><use href="#i-bell"/></svg>
+            <span class="badge">3</span>
+          </button>
+          <button class="profile-btn" type="button" aria-label="Perfil">
+            <svg class="icon"><use href="#i-user"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero" aria-label="Good Morning, Ana!">
+        <button class="hero-play" type="button" aria-label="Empezar sesión"
+                data-title="Sesión de calma" data-artist="Ana" data-cover="assets/avatar-ana.png"></button>
+      </section>
+
+      <!-- KPIs -->
+      <section class="kpis" aria-label="Estadísticas">
+        <article class="kpi kpi-1">
+          <div class="kpi-icon"><svg class="icon"><use href="#i-note"/></svg></div>
+          <p class="kpi-label">Meditaciones</p>
+          <p class="kpi-value">48</p>
+          <p class="kpi-delta">+18% esta semana</p>
+        </article>
+        <article class="kpi kpi-2">
+          <div class="kpi-icon"><svg class="icon"><use href="#i-heart"/></svg></div>
+          <p class="kpi-label">Minutos de calma</p>
+          <p class="kpi-value">312</p>
+          <p class="kpi-delta">+8 esta semana</p>
+        </article>
+        <article class="kpi kpi-3">
+          <div class="kpi-icon"><svg class="icon"><use href="#i-clock"/></svg></div>
+          <p class="kpi-label">Horas de enfoque</p>
+          <p class="kpi-value">34.6</p>
+          <p class="kpi-delta">+6.2 esta semana</p>
+        </article>
+        <article class="kpi kpi-4">
+          <div class="kpi-icon"><svg class="icon"><use href="#i-flame"/></svg></div>
+          <p class="kpi-label">Racha</p>
+          <p class="kpi-value">7</p>
+          <p class="kpi-delta">días seguidos</p>
+        </article>
+      </section>
+
+      <!-- GRÁFICOS -->
+      <section class="charts">
+        <article class="card chart-card">
+          <div class="card-head">
+            <h2>Tiempo de calma</h2>
+            <button class="select" id="weekSelect" type="button" aria-label="Cambiar periodo">
+              <span id="weekLabel">Esta semana</span>
+              <svg class="icon"><use href="#i-chevron"/></svg>
+            </button>
+          </div>
+          <div class="bars-wrap">
+            <svg id="bars" viewBox="0 0 480 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Minutos de calma por día"></svg>
+          </div>
+        </article>
+
+        <article class="card genre-card">
+          <div class="card-head"><h2>Tipos de sesión</h2></div>
+          <div class="genre-body">
+            <svg id="donut" viewBox="0 0 200 200" role="img" aria-label="Distribución de sesiones"></svg>
+            <ul class="legend" id="legend"></ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- RECIENTES / DAILY MIX -->
+      <section class="bottom">
+        <article class="card recent">
+          <div class="card-head">
+            <h2>Sesiones recientes</h2>
+            <a class="see-all" href="#">Ver todo</a>
+          </div>
+          <ul class="song-list" id="songList">
+            <li class="song" data-title="Sunset Drive" data-artist="Lofi Chill">
+              <img src="assets/cover-sunset.png" alt="Portada de Sunset Drive">
+              <div class="song-info"><strong>Sunset Drive</strong><span>Lofi Chill</span></div>
+              <button class="play-btn" type="button" aria-label="Reproducir Sunset Drive"><svg class="icon"><use href="#i-play"/></svg></button>
+            </li>
+            <li class="song" data-title="Golden Hour" data-artist="JVKE">
+              <img src="assets/cover-golden.png" alt="Portada de Golden Hour">
+              <div class="song-info"><strong>Golden Hour</strong><span>JVKE</span></div>
+              <button class="play-btn" type="button" aria-label="Reproducir Golden Hour"><svg class="icon"><use href="#i-play"/></svg></button>
+            </li>
+            <li class="song" data-title="Coffee Shop" data-artist="Beabadoobee">
+              <img src="assets/cover-coffee.png" alt="Portada de Coffee Shop">
+              <div class="song-info"><strong>Coffee Shop</strong><span>Beabadoobee</span></div>
+              <button class="play-btn" type="button" aria-label="Reproducir Coffee Shop"><svg class="icon"><use href="#i-play"/></svg></button>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card mix">
+          <div class="card-head">
+            <h2>Daily Mix</h2>
+            <a class="see-all" href="#">Ver todo</a>
+          </div>
+          <div class="mix-card" data-title="Chill Mibes" data-artist="80 sesiones" data-cover="assets/daily-mix.png">
+            <img src="assets/daily-mix.png" alt="Chill Mibes, 80 sesiones, sillón morado con tocadiscos">
+            <button class="mix-play" type="button" aria-label="Reproducir Chill Mibes"></button>
+          </div>
+        </article>
+      </section>
+
+      <!-- BANNER INFERIOR -->
+      <section class="discover" aria-label="Descubre nuevas sesiones">
+        <button class="explore-hit" type="button" aria-label="Explorar"
+                data-title="Descubre nuevas sesiones" data-artist="Para Ana" data-cover="assets/discover-star.png"></button>
+      </section>
+
+      <footer class="site-footer">
+        Creado por Jonathan Toro ·
+        <a href="https://jon-torlen.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Visitar el portafolio de Jonathan Toro">
+          <img src="assets/portafolio-jt.jpg" alt="Logo JT de Jonathan Toro">
+        </a>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- MINI PLAYER -->
+  <div class="mini-player" id="player" role="status" aria-live="polite" hidden>
+    <img id="playerCover" src="assets/avatar-ana.png" alt="">
+    <div class="player-info">
+      <strong id="playerTitle">—</strong>
+      <span id="playerArtist">—</span>
+      <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <button class="player-toggle" id="playerToggle" type="button" aria-label="Pausar">
+      <svg class="icon"><use href="#i-pause"/></svg>
+    </button>
+  </div>
+
+  <div class="tooltip" id="tooltip" role="tooltip"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
